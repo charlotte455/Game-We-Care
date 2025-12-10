@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<title>DisGovery Game</title>
+<style>
+ body { font-family: Arial; text-align:center; background:#f7f5ef; }
+ h1 { color:#d45c1d; }
+ .puzzle { margin:20px auto; max-width:500px; padding:20px; border:2px solid #2b463c; border-radius:12px; }
+ button { padding:10px 20px; margin:5px; background:#d45c1d; color:white; border:none; border-radius:6px; cursor:pointer; }
+ .hidden { display:none; }
+ img.logo { width:240px; margin-bottom:20px; }
+</style>
+</head>
+<body>
+<img src="logo.png" class="logo">
+
+<h1>✨ DisGovery Game ✨</h1>
+<p>Bedankt voor jullie samenwerking – namens het kernteam van We Care to DisGover 💛</p>
+
+<div class="puzzle" id="p1">
+ <h3>🧩 Puzzle 1 – Verandering in zorg en welzijn begint bij…</h3>
+ <button onclick="q1('A')">A: Controle</button>
+ <button onclick="q1('B')">B: Nieuwsgierigheid</button>
+ <p id="r1"></p>
+</div>
+
+<div class="puzzle hidden" id="p1b">
+ <h3>🧩 Puzzle 2 – Wat is onmisbaar in veranderprocessen?</h3>
+ <button onclick="q1b('A')">A: Veerkracht</button>
+ <button onclick="q1b('B')">B: Zonder twijfel doorgaan</button>
+ <p id="r1b"></p>
+</div>
+
+<div class="puzzle hidden" id="p2">
+ <h3>🧩 Puzzle 3 – we … to disgover</h3>
+ <button onclick="q2('A')">A: deliver</button>
+ <button onclick="q2('B')">B: care</button>
+ <p id="r2"></p>
+</div>
+
+<div class="puzzle hidden" id="final">
+ <h2>🎉 Eindwoord: <strong>Samen Vernieuwen</strong></h2>
+ <p>Op naar een 2026 waarin we samen zorg en welzijn verder vernieuwen 🌿</p>
+</div>
+
+<script>
+function q1(a){
+ if(a==='B'){
+    r1.textContent="✔️ Precies! Nieuwsgierigheid opent deuren.";
+    p1b.classList.remove('hidden');
+ } else {
+    r1.textContent="❌ Probeer nog eens.";
+ }
+}
+function q1b(a){
+ if(a==='A'){
+    r1b.textContent="✔️ Juist! Veerkracht houdt verandering in beweging.";
+    p2.classList.remove('hidden');
+ } else {
+    r1b.textContent="❌ Niet helemaal.";
+ }
+}
+function q2(a){
+ if(a==='B'){
+    r2.textContent="✔️ Helemaal goed! CARE staat centraal in DisGovery.";
+    final.classList.remove('hidden');
+ } else {
+    r2.textContent="❌ Probeer het nog eens 😉";
+ }
+}
+</script>
+
+</body>
+</html>
